@@ -1,6 +1,6 @@
-export type UserRole = 'employee' | 'supervisor' | 'hr' | 'manager';
+export type UserRole = "employee" | "supervisor" | "hr" | "manager";
 
-export interface User {
+export interface AppUser {
   id: string;
   name: string;
   email: string;
@@ -14,26 +14,26 @@ export interface User {
   onboardingProgress?: number;
 }
 
-export type ProgramType = 
-  | 'inkompass' 
-  | 'earlyTalent' 
-  | 'apprenticeship' 
-  | 'academicPlacement' 
-  | 'workExperience';
+export type ProgramType =
+  | "inkompass"
+  | "earlyTalent"
+  | "apprenticeship"
+  | "academicPlacement"
+  | "workExperience";
 
-export type OnboardingStage = 
-  | 'prepare' 
-  | 'orient' 
-  | 'land' 
-  | 'integrate' 
-  | 'excel';
+export type OnboardingStage =
+  | "prepare"
+  | "orient"
+  | "land"
+  | "integrate"
+  | "excel";
 
 export interface Notification {
   id: string;
   userId: string;
   title: string;
   message: string;
-  type: 'info' | 'warning' | 'success' | 'error';
+  type: "info" | "warning" | "success" | "error";
   isRead: boolean;
   createdAt: string;
   link?: string;
@@ -44,8 +44,8 @@ export interface Evaluation {
   employeeId: string;
   supervisorId: string;
   date: string;
-  type: 'field' | 'probation' | 'periodic' | 'training';
-  status: 'pending' | 'completed';
+  type: "field" | "probation" | "periodic" | "training";
+  status: "pending" | "completed";
   score?: number;
   feedback?: string;
   skills: Record<string, number>;
@@ -59,14 +59,14 @@ export interface Survey {
   description: string;
   deadline: string;
   questions: SurveyQuestion[];
-  status: 'draft' | 'active' | 'completed';
+  status: "draft" | "active" | "completed";
   responsesCount: number;
 }
 
 export interface SurveyQuestion {
   id: string;
   text: string;
-  type: 'multiple_choice' | 'rating' | 'text';
+  type: "multiple_choice" | "rating" | "text";
   options?: string[];
   required: boolean;
 }
