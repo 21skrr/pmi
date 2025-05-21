@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Mail, Lock, AlertCircle } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import pmiLogoo from "../../assets/pmi.png";
@@ -16,7 +16,7 @@ const Login: React.FC = () => {
     try {
       await login(email, password);
       navigate("/dashboard");
-    } catch (error) {
+    } catch {
       // Error is handled by the AuthContext
     }
   };
